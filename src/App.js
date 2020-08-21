@@ -1,25 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch, Redirect } from 'react-router-dom';
+//styling
 import './App.css';
+import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
+import { stylingObject, theme } from "./style/general";
+//component
+import Main from './pages/Main';
+import NavBar from './pages/components/NavBar';
+import BottomNav from './pages/components/BottomNav';
+import ResourceCard from './pages/components/ResourceCard';
+//context
+import ClassesContext from './context/classesContext';
+import Welcome from './pages/Welcome';
 
+
+//-------styling hooks------
+const useStyles = makeStyles(stylingObject);
+
+//-------app function--------
 function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <ClassesContext.Provider value={classes}>
+        <NavBar />
+        <Switch>
+          <Route path="/resource/:id" render={() => (<ResourceCard />)} />
+          <Route path="/home" render={({ location }) => (<Main location={location} />)} />
+          <Route path="/login" render={({ location }) => (<Welcome location={location} />)} />
+          <Redirect from="*" to="/home" />
+        </Switch>
+        <BottomNav />
+      </ClassesContext.Provider>
+    </ThemeProvider>
   );
 }
 
