@@ -101,16 +101,15 @@ export default function NavBar() {
             <AppBar >
                 <Toolbar className={classes.toolbar}>
                     <Typography className={classes.title} onClick={() => history.push('/')} variant="h6" >
-                        DATAMO
+                        StackOfMe
                     </Typography>
 
-
-                    {/*------------------ desktop menu----------------------------  */}
+                    {/* 
+                  
                     <div className={classes.sectionDesktop}>
                         <NavMenu />
                     </div>
-                    {/*----------------------------------------------  */}
-
+                 
                     {!create && <Button
                         variant="contained"
                         color="secondary"
@@ -119,16 +118,16 @@ export default function NavBar() {
                         onClick={openCreate}
                     >
                         Create
-                        </Button>}
+                        </Button>} */}
 
                 </Toolbar>
             </AppBar>
-            {create && <ResourceForm closeCreate={closeCreate} submit={submitCreate} />}
+            {/* {create && <ResourceForm closeCreate={closeCreate} submit={submitCreate} />}
             {alertDialog && <AlertDialog content={alertDialog} />}
-            {/* loading backdrop */}
+         
             <Backdrop className={classes.backdrop} open={loading}>
                 <CircularProgress color="inherit" />
-            </Backdrop>
+            </Backdrop> */}
         </div>
     );
 }

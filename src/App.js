@@ -8,7 +8,7 @@ import { stylingObject, theme } from "./style/general";
 import Main from './pages/Main';
 import NavBar from './pages/components/NavBar';
 import BottomNav from './pages/components/BottomNav';
-import ResourceCard from './pages/components/ResourceCard';
+
 //context
 import ClassesContext from './context/classesContext';
 import Welcome from './pages/Welcome';
@@ -26,12 +26,11 @@ function App() {
       <ClassesContext.Provider value={classes}>
         <NavBar />
         <Switch>
-          <Route path="/resource/:id" render={() => (<ResourceCard />)} />
+
           <Route path="/home" render={({ location }) => (<Main location={location} />)} />
           <Route path="/login" render={({ location }) => (<Welcome location={location} />)} />
           <Redirect from="*" to="/home" />
         </Switch>
-        <BottomNav />
       </ClassesContext.Provider>
     </ThemeProvider>
   );

@@ -4,8 +4,9 @@ import themeObject from "./theme";
 import vietnamFlag from "./../images/vietnamFlag.svg"
 import englishFlag from "./../images/englishFlag.svg"
 //----------------------common styles---------------------
-const mainColor = "#ffd100";
-const secondaryColor = '#ffc371';
+const mainColor = "#d56d6d";
+const secondaryColor = '#eeb8b8';
+const cardBackground = "#ebf5ff";
 //----------------------generating MUI theme and assign responsive font size property
 // then create a styling object and passing theme to it for styling.
 //finally, we export both theme and stylingObject to App.js to execute in stateless function component.
@@ -17,17 +18,28 @@ theme = responsiveFontSizes(theme);
 const stylingObject = (theme) => ({
     root: {
         minHeight: "100vh",
-        maxWidth: "100vw",
         overflowX: 'hidden',
-        background: "#fff",
-        padding: "70px 0px",
-        position: "relative"
+        background: "#fff5f4",
+        padding: "70px 20px",
+        position: "relative",
+        maxWidth: 1000
     },
     button: {
         margin: theme.spacing(1),
         borderRadius: 20,
         marginLeft: 12
     },
+    stackCard: {
+        width: "100%",
+        background: cardBackground,
+        borderRadius: 0,
+
+    },
+    avatar: {
+        width: 40, height: 40, borderRadius: "50%", overflow: "hidden", display: "flex",
+        justifyCOntent: "center", alignItems: "center", boxShadow: "4px 4px 6px #ededed, -4px -4px 6px #ffffff"
+    },
+    avatarImage: { width: "100%" },
     // container: {
     //     maxWidth: 620,
     //     minHeight: 600,

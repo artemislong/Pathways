@@ -22,10 +22,10 @@ const themeObject = {
     },
     palette: {
         primary: {
-            main: '#ffd100',
+            main: '#d56d6d',
         },
         secondary: {
-            main: '#ffc371',
+            main: '#eeb8b8',
         }
     },
 };

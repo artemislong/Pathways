@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 
 import ClassesContext from './../context/classesContext';
-import PreviewCard from './components/PreviewCard';
+
 //materialUI
 import { Grid, Typography } from '@material-ui/core';
 import { Container } from '@material-ui/core';
@@ -14,7 +14,7 @@ const Welcome = ({ location }) => {
 
 
     return (
-        <Container className={classes.root}>
+        <Container className={classes.root} maxWidth="xl">
 
             <div className={classes.welcomeLoginBox}>
                 <LoginButton />
