@@ -32,7 +32,7 @@ const StackCard = ({ data }) => {
                     secondary={data.description}
                 />
                 <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="open link">
+                    <IconButton edge="end" target="_blank" href={data.url} aria-label="open link">
                         <LaunchIcon />
                     </IconButton>
                 </ListItemSecondaryAction>
