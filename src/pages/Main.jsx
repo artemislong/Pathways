@@ -21,10 +21,10 @@ const StackCard = ({ data }) => {
     return (
         <React.Fragment>
             <Divider component="li" />
-            <ListItem alignItems="flex-start">
+            <ListItem alignItems="flex-start" className={classes.cardContent}>
                 <ListItemAvatar>
                     <div alt={data.title} className={classes.avatar}>
-                        {<img src={data.image} className={classes.avatarImage} /> || data.title[0]}
+                        {(data.image) ? <img src={data.image} className={classes.avatarImage} /> : data.title[0]}
                     </div>
                 </ListItemAvatar>
                 <ListItemText
@@ -38,7 +38,7 @@ const StackCard = ({ data }) => {
                 </ListItemSecondaryAction>
             </ListItem>
             {data.tags[0] && <li style={{ paddingLeft: 20, paddingBottom: 10, marginTop: -5 }}>
-                {data.tags.map(t => { return <Chip color="primary" variant="outlined" label={t} style={{ marginRight: 5 }} /> })}
+                {data.tags.map(t => { return <Chip color="primary" variant="outlined" label={t} style={{ margin: "0px 0px 5px 5px" }} /> })}
             </li>}
         </React.Fragment>
         // <Card variant="outlined" className={classes.stackCard}>
@@ -70,7 +70,7 @@ const CategoryCard = ({ data }) => {
         <Paper variant="outlined" style={{ borderRadius: 30, margin: "20px 0px", padding: "0px 0px 20px 0px" }} >
             <Typography variant="h5" component="h2" style={{ margin: "10px 20px 10px 20px" }}>{data.title}</Typography>
             <List style={{ padding: 0 }}>
-                {data.elements.map(d => {
+                {data.children.map(d => {
                     return <StackCard key={d.title} data={d} />
                 })}
                 <Divider component="li" />
@@ -84,19 +84,94 @@ const CategoryCard = ({ data }) => {
 
 const Main = ({ location }) => {
     const classes = useContext(ClassesContext);
+    const categories = {
+        frameworks: {
+            title: "Frameworks & Core technology",
+            tags: ["Framework", "Library", "Environment"],
+            children: []
+        },
+        gitAndHosting: {
+            title: "Version control & Deployment",
+            tags: ["Git", "Hosting", "Server"],
+            children: []
+        },
+        react: {
+            title: "React packages & Tools",
+            tags: ["React"],
+            children: []
+        },
+        cssAndUI: {
+            title: "CSS & Component toolkits",
+            tags: ["CSS framework", "UI components"],
+            children: []
+        },
+        illustrationsAndIcons: {
+            title: "Icons and Illustrations",
+            tags: ["Illustrations", "Icons"],
+            children: []
+        },
+        designAndStyling: {
+            title: "Designing and Styling",
+            tags: ["Design", "Style"],
+            children: []
+        },
+        discoverAndLearn: {
+            title: "Discover and Learn",
+            tags: ["Discover", "Learning"],
+            children: []
+        },
+        else: {
+            title: "Other resources",
+            tags: [],
+            children: []
+        }
+    };
+
+    const checkCategory = (element, category) => { //check if there is a tag match between element and category
+        console.log("checking category", category, element)
+
+        for (let tag of category.tags) {
+            if (element.tags.includes(tag)) return true
+        }
+
+    };
+
+    const categorize = (element) => {
+        let match = false
+        for (let category in categories) {
+            if (checkCategory(element, categories[category])) {
+                categories[category].children.push(element); //push if tag matched
+                match = true;
+            }
+        }
+        if (!match) categories.else.children.push(element); //if no match
+    };
+
+    const pushContentArray = (array) => {  //to push all categories into one array
+        for (let category in categories) {
+            array.push(categories[category])
+        }
+    }
+    console.log("initial array", content)
+    content.map(c => { categorize(c) }); //categorizing cards
+    const categoryCards = [] //clearing the content array
+    pushContentArray(categoryCards) //pushing final arrays
+    console.log("final array", categoryCards)
+
+
 
     return (
         <Container className={classes.root} >
             <div style={{ maxWidth: 1000 }}>
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6} >
-                        {content.map(c => {
-                            if (content.indexOf(c) % 2 === 0) return <CategoryCard key={c.title} data={c} />
+                        {categoryCards.map(c => {
+                            if (categoryCards.indexOf(c) % 2 === 0 && c) return <CategoryCard key={c.title} data={c} />
                         })}
                     </Grid>
                     <Grid item xs={12} md={6} >
-                        {content.map(c => {
-                            if (content.indexOf(c) % 2 !== 0) return <CategoryCard key={c.title} data={c} />
+                        {categoryCards.map(c => {
+                            if (categoryCards.indexOf(c) % 2 !== 0 && c) return <CategoryCard key={c.title} data={c} />
                         })}
                     </Grid>
                 </Grid>

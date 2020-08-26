@@ -22,7 +22,10 @@ const stylingObject = (theme) => ({
         background: "#fff5f4",
         padding: "70px 20px",
         position: "relative",
-        maxWidth: 1000
+        maxWidth: 1000,
+        [theme.breakpoints.down(500)]: {
+            padding: "70px 10px",
+        },
     },
     button: {
         margin: theme.spacing(1),
@@ -36,10 +39,16 @@ const stylingObject = (theme) => ({
 
     },
     avatar: {
-        width: 40, height: 40, borderRadius: "50%", overflow: "hidden", display: "flex",
-        justifyCOntent: "center", alignItems: "center", boxShadow: "4px 4px 6px #ededed, -4px -4px 6px #ffffff"
+        width: 50, height: 50, borderRadius: "50%", overflow: "hidden", display: "flex", color: mainColor, fontWeight: 700, fontSize: "1.5em",
+        justifyContent: "center", alignItems: "center", boxShadow: "4px 4px 6px #ededed, -4px -4px 6px #ffffff"
     },
     avatarImage: { width: "100%" },
+    cardContent: {
+        [theme.breakpoints.down(500)]: {
+            paddingLeft: 10,
+            paddingRight: 40
+        },
+    },
     // container: {
     //     maxWidth: 620,
     //     minHeight: 600,
