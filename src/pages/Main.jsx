@@ -87,12 +87,12 @@ const Main = ({ location }) => {
     const categories = {
         frameworks: {
             title: "Monday - Chest And Back",
-            tags: ["Monday", "Chest And Back"],
+            tags: ["Monday", "Chest","Back"],
             children: []
         },
         gitAndHosting: {
             title: "Tuesday - Legs And Shoulders",
-            tags: ["Tuesday", "Legs And Shoulders"],
+            tags: ["Tuesday", "Legs" ,"Shoulders"],
             children: []
         },
         react: {
@@ -102,7 +102,7 @@ const Main = ({ location }) => {
         },
         cssAndUI: {
             title: "Thursday - Back And Arms",
-            tags: ["Thursday", "Back And Arms"],
+            tags: ["Thursday", "Back","Arm"],
             children: []
         },
         illustrationsAndIcons: {
@@ -112,7 +112,7 @@ const Main = ({ location }) => {
         },
         designAndStyling: {
             title: "Saturday - Chest And Shoulders",
-            tags: ["Saturday", "Chest And Shoulders"],
+            tags: ["Saturday", "Chest", "Shoulder"],
             children: []
         },
         discoverAndLearn: {
