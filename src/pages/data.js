@@ -20,6 +20,64 @@ const content = [
         url: "https://www.youtube.com/watch?v=1YY0xyCgITc&t=567s",
         tags: ["Warmup"]
     },
+    {
+        title: "20 Min INTENSE Chest Workout at Home (Dumbbells & Push Ups) GROW YOUR CHEST",
+        description: "20 min",
+        image: "",
+        url: "https://www.youtube.com/watch?v=oo-aga3rAWs",
+        tags: ["Chest"]
+    },
+    {
+        title: "10-20 min | Complete Chest & Shoulder Home Workout | Dumbbells Only",
+        description: "10-20 min",
+        image: "",
+        url: "https://www.youtube.com/watch?v=M55Oq0hd3FQ",
+        tags: ["Chest", "Shoulder"]
+    },
+    {
+        title: "Ultimate Abs Playlist",
+        description: "Up to 40 min",
+        image: "",
+        url: "https://www.youtube.com/watch?v=Bv-yhwuuiUE&list=PL2NpXBzdtNal6cuw3JbQynJHbRVvNL2w3",
+        tags: ["Abs"]
+    },
+    {
+        title: "35 | PUSH WORKOUT – Upper Body Dumbbell Workout – Chest, Triceps & Shoulders",
+        description: "35 min",
+        image: "",
+        url: "https://www.youtube.com/watch?v=TF1-Dt7IKLA",
+        tags: ["Shoulders", "Chest"]
+    },
+        {
+        title: "18 MIN LOWER BODY WORKOUT | LOWER BODY DUMBBELL WORKOUT | LOWER BODY TABATA WORKOUT",
+        description: "18 min",
+        image: "",
+        url: "https://www.youtube.com/watch?v=RmjnmjhXgrc&list=PL2NpXBzdtNal0WvaKDW55DuAi7jSazMvl&index=1",
+        tags: ["Legs"]
+    },
+        {
+        title: "10 | Complete Arm Workout (DUMBBELLS ONLY)",
+        description: "10 min",
+        image: "",
+        url: "https://www.youtube.com/watch?v=0mLMjPwQNkw",
+        tags: ["Arm"]
+    },
+        {
+        title: "8x3 | Bigger Arms Workout (Dumbbells Only)",
+        description: "20 min",
+        image: "",
+        url: "https://www.youtube.com/watch?v=XNTj8RZVcrE&t=539s",
+        tags: ["Arm"]
+    },
+//         {
+//         title: "35 | PUSH WORKOUT – Upper Body Dumbbell Workout – Chest, Triceps & Shoulders",
+//         description: "35 min",
+//         image: "",
+//         url: "https://www.youtube.com/watch?v=TF1-Dt7IKLA",
+//         tags: ["Shoulders", "Chest"]
+//     },
+    
+    
 //     {
 //         title: "ReactJS",
 //         description: "React. js is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications.",
