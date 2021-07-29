@@ -86,43 +86,43 @@ const Main = ({ location }) => {
     const classes = useContext(ClassesContext);
     const categories = {
         frameworks: {
-            title: "Frameworks & Core technology",
-            tags: ["Framework", "Library", "Environment"],
+            title: "Monday - Chest And Back",
+            tags: ["Monday", "Chest And Back"],
             children: []
         },
         gitAndHosting: {
-            title: "Version control & Deployment",
-            tags: ["Git", "Hosting", "Server"],
+            title: "Tuesday - Legs And Shoulders",
+            tags: ["Tuesday", "Legs And Shoulders"],
             children: []
         },
         react: {
-            title: "React packages & Tools",
-            tags: ["React"],
+            title: "Wednesday - Cardio + Push up + Abs",
+            tags: ["Wednesday", "Cardio", "Push up", "Abs"],
             children: []
         },
         cssAndUI: {
-            title: "CSS & Component toolkits",
-            tags: ["CSS framework", "UI components"],
+            title: "Thursday - Back And Arms",
+            tags: ["Thursday", "Back And Arms"],
             children: []
         },
         illustrationsAndIcons: {
-            title: "Icons and Illustrations",
-            tags: ["Illustrations", "Icons"],
+            title: "Friday - Cardio + Push up + Abs",
+            tags: ["Friday", "Cardio", "Push up", "Abs"],
             children: []
         },
         designAndStyling: {
-            title: "Designing and Styling",
-            tags: ["Design", "Style"],
+            title: "Saturday - Chest And Shoulders",
+            tags: ["Saturday", "Chest And Shoulders"],
             children: []
         },
         discoverAndLearn: {
-            title: "Discover and Learn",
-            tags: ["Discover", "Learning"],
+            title: "Warmup",
+            tags: ["Warmup"],
             children: []
         },
         else: {
-            title: "Other resources",
-            tags: [],
+            title: "Cooldown",
+            tags: ["Cooldown"],
             children: []
         }
     };
